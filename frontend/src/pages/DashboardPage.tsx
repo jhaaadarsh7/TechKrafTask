@@ -401,11 +401,9 @@ export function DashboardPage() {
         .fav-list::-webkit-scrollbar-thumb { background: #D6CFC6; border-radius: 99px; }
       `}</style>
 
-      {/* ── Header ── */}
       <header className="anim-drop-down sticky top-0 z-50 border-b border-stone-200/80 bg-white/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3">
-            {/* Avatar dot */}
             <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-orange-400 to-amber-500 text-sm font-bold text-white shadow-sm">
               {user?.name?.charAt(0).toUpperCase()}
             </div>
@@ -435,7 +433,6 @@ export function DashboardPage() {
         </div>
       </header>
 
-      {/* ── Error ── */}
       {error && (
         <div className="mx-auto max-w-7xl px-4 pt-4 sm:px-6 lg:px-8">
           <div className="anim-fade-up flex items-center gap-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
@@ -445,13 +442,10 @@ export function DashboardPage() {
         </div>
       )}
 
-      {/* ── Layout ── */}
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-8">
 
-          {/* ── Properties ── */}
           <section className="min-w-0 flex-1 anim-fade-up">
-            {/* Section header */}
             <div className="mb-6 flex items-end justify-between">
               <div>
                 <h2 className="font-serif text-4xl text-stone-900">Properties</h2>
@@ -481,7 +475,6 @@ export function DashboardPage() {
                       style={{ animationDelay: `${idx * 0.06}s` }}
                       className="property-card anim-fade-up group relative flex flex-col overflow-hidden rounded-2xl border border-stone-200/80 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)]"
                     >
-                      {/* Image */}
                       <div className="relative h-52 shrink-0 overflow-hidden bg-stone-100">
                         <img
                           src={
@@ -492,24 +485,20 @@ export function DashboardPage() {
                           className="card-img h-full w-full object-cover"
                         />
 
-                        {/* Gradient overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
-                        {/* Price badge */}
                         <div className="absolute bottom-3 left-3">
                           <span className="rounded-lg bg-white/95 px-2.5 py-1 text-sm font-bold text-stone-900 shadow-sm backdrop-blur-sm">
                             NPR {property.price.toLocaleString()}
                           </span>
                         </div>
 
-                        {/* Premium tag */}
                         <div className="absolute left-3 top-3">
                           <span className="rounded-full bg-amber-500/90 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-sm backdrop-blur-sm">
                             Premium
                           </span>
                         </div>
 
-                        {/* Heart button */}
                         <button
                           type="button"
                           onClick={() => toggleFavourite(property.id)}
@@ -543,10 +532,8 @@ export function DashboardPage() {
                           <span className="line-clamp-1">{property.location}</span>
                         </div>
 
-                        {/* Divider */}
                         <div className="my-4 h-px w-full bg-stone-100" />
 
-                        {/* CTA */}
                         <button
                           type="button"
                           onClick={() => toggleFavourite(property.id)}
@@ -582,11 +569,9 @@ export function DashboardPage() {
             )}
           </section>
 
-          {/* ── Favourites Sidebar ── */}
           <aside className="anim-slide-left w-full lg:w-[260px] lg:shrink-0">
             <div className="sticky top-20 overflow-hidden rounded-2xl border border-stone-200/80 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
 
-              {/* Sidebar header */}
               <div className="border-b border-stone-100 bg-gradient-to-r from-orange-50 to-amber-50 px-5 py-4">
                 <div className="flex items-center justify-between">
                   <h3 className="font-serif text-xl text-stone-900">Saved</h3>
@@ -603,7 +588,6 @@ export function DashboardPage() {
                 </p>
               </div>
 
-              {/* List */}
               {favourites.length === 0 ? (
                 <div className="flex flex-col items-center gap-3 px-5 py-10 text-center">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-stone-100 text-2xl text-stone-300">
@@ -621,7 +605,6 @@ export function DashboardPage() {
                       style={{ animationDelay: `${idx * 0.05}s` }}
                       className="fav-item group flex flex-col gap-3 px-4 py-4 transition hover:bg-stone-50"
                     >
-                      {/* Top row: thumbnail + info */}
                       <div className="flex gap-3">
                         <div className="h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-stone-100">
                           <img
@@ -644,7 +627,6 @@ export function DashboardPage() {
                         </div>
                       </div>
 
-                      {/* Remove button — full width text */}
                       <button
                         type="button"
                         onClick={() => toggleFavourite(item.propertyId)}
@@ -668,7 +650,6 @@ export function DashboardPage() {
                 </ul>
               )}
 
-              {/* Footer summary */}
               {favourites.length > 0 && (
                 <div className="border-t border-stone-100 bg-stone-50 px-5 py-3">
                   <p className="text-xs text-stone-500">
