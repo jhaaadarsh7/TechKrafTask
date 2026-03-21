@@ -19,7 +19,6 @@ export function LoginPage() {
   const [mounted, setMounted] = useState(false);
   const [shake, setShake] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const [successField, setSuccessField] = useState<string | null>(null);
 
   useEffect(() => {
     const t = setTimeout(() => setMounted(true), 60);
